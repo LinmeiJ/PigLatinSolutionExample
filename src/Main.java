@@ -5,11 +5,10 @@ import java.util.regex.Pattern;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
 
 		char translateAgain = 'y';
 		while (translateAgain == 'y') {
-		
+
 			System.out.println("enter your msg: ");
 			String str = sc.nextLine();
 

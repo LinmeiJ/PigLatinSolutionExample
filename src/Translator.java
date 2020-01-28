@@ -15,8 +15,9 @@ public class Translator {
 				translatedWords[i] = getApostropheTranslated(s[i]);
 			} else if (!isContainPunct(s[i])) {
 				translatedWords[i] = translateWordWithVowels(s[i]); // has vowels but without punctuation.
-			}else {
-				translatedWords[i] = getVowelsTranslatedWithPunct(s[i]); // translate word contains vowels and punctuation
+			} else {
+				translatedWords[i] = getVowelsTranslatedWithPunct(s[i]); // translate word contains vowels and
+																			// punctuation
 			}
 		}
 
@@ -26,31 +27,31 @@ public class Translator {
 	private static String getApostropheTranslated(String s) {
 		Pattern p = Pattern.compile("[aeiouAEIOU]");
 		Matcher m = p.matcher(s);
-		
-		if(m.find()) {
+
+		if (m.find()) {
 			if (!isStartsWithVowels(s)) {// not start with vowel
-					int index = findIndexOfTheFirstVowel(s);
-					return s.substring(index) + s.substring(0, index) + "ay";
-				}
-				return s + "way";//start with vowel
+				int index = findIndexOfTheFirstVowel(s);
+				return s.substring(index) + s.substring(0, index) + "ay";
 			}
-		return s +"ay"; // do not contain any vowel
-		
+			return s + "way";// start with vowel
+		}
+		return s + "ay"; // do not contain any vowel
+
 	}
 
 	private static boolean isContainsApostrophe(String s) {
-        if(s.contains("'")) {
-        	return true;
-        }
+		if (s.contains("'")) {
+			return true;
+		}
 		return false;
 	}
 
 	private static String getVowelsTranslatedWithPunct(String s) {
 		if (!isStartsWithVowels(s)) { // not start with vowel
 			int index = findIndexOfTheFirstVowel(s);
-			return s.substring(index, s.length()-1) + s.substring(0, index) + "ay" + s.substring(s.length()-1);
-		} else { 
-			return s.substring(0, s.length() - 1) + "way" + s.substring(s.length()-1);
+			return s.substring(index, s.length() - 1) + s.substring(0, index) + "ay" + s.substring(s.length() - 1);
+		} else {
+			return s.substring(0, s.length() - 1) + "way" + s.substring(s.length() - 1);
 		}
 	}
 
