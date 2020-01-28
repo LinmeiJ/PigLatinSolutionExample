@@ -16,7 +16,7 @@ public class Translator {
 			} else if (!isContainPunct(s[i])) {
 				translatedWords[i] = translateWordWithVowels(s[i]); // has vowels but without punctuation.
 			}else {
-				translatedWords[i] = getVowelsTranslatedWithPunct(s[i]); // translate word contains vowels && start with
+				translatedWords[i] = getVowelsTranslatedWithPunct(s[i]); // translate word contains vowels and punctuation
 			}
 		}
 
